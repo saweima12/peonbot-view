@@ -38,7 +38,9 @@
                             <div class="inline-flex">{message.user_id}</div>
                         </div>    
                     </summary>
-                    <JsonView json={message.raw}/>
+                    <div class="px-5">
+                        <JsonView json={message.raw}/>
+                    </div>
                 </details>
             {/each}
         {/each}
@@ -59,6 +61,7 @@
         background-color: #e9eff5;
         font-size: 18px;
         color: #333;
+        height: 70px;
     }
 
     .deleted-item > * {
