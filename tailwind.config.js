@@ -4,6 +4,12 @@ const config = {
   theme: {
     extend: {},
   },
+  safelist: [
+    "flex",
+		"flex-row",
+		"flex-col",
+		"sm:flex-row"
+  ],
   plugins: [],
 }
 
