@@ -14,7 +14,7 @@ export const load: PageServerLoad = async({params, fetch}) => {
     const formatedData = data.map(item => {
         item.last_updated = dayjs(item.last_updated).format("YYYY-MM-DD")
         return item
-    })
+    }).sort((p1, p2) => p2.point - p1.point)
 
     return{
         members: formatedData

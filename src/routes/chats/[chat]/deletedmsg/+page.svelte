@@ -4,15 +4,20 @@
 
     export let data: PageData;
 
-    const dateGroup = Object.entries(data.dateGroup);
+    const dateGroup = Object.entries(data.dateGroup)
+        .map( ([date, records]) => {
+            records = records.sort((d1, d2) => new Date(d2.record_time).getTime() - new Date(d1.record_time).getTime());
+            return {date, records}
+        }).sort((d1, d2) => new Date(d2.date).getTime() - new Date(d1.date).getTime());
+
 </script>
 
 <div class="deleted-wrapper">
     <div class="deleted-container">
         {#each dateGroup as group}
-            <h2>{group[0]}</h2>
+            <h2>{group.date}</h2>
         
-            {#each group[1] as message} 
+            {#each group.records as message} 
                 <details>
                     <summary class="flex">
                         <div class="flex w-full px-4 py-1 deleted-item">
