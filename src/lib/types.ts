@@ -15,7 +15,8 @@ export interface DeleteMessageDetail {
     full_name: string,
     raw: Record<string, string>,
     record_time: string,
-    user_id: string
+    user_id: string,
+    username: string
 }
 
 export interface MemberDetail {

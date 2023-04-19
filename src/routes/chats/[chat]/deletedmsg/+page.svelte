@@ -18,7 +18,18 @@
                         <div class="flex w-full px-4 py-1 deleted-item">
                             <div class="inline-flex">{message.record_time}</div>
                             <div class="inline-flex px-8 justify-center">{message.content_type}</div>
-                            <div class="inline-flex flex-grow justify-center">{message.full_name}</div>
+                            <div class="inline-flex flex-col flex-grow ">
+                                <div class="flex justify-center fullname">
+                                    {message.full_name}
+                                </div>
+                                {#if message.username !== ""}
+                                    <div class="flex justify-center username">
+                                        ({message.username})
+                                    </div>    
+                                {/if}
+
+                            </div>
+
                             <div class="inline-flex">{message.user_id}</div>
                         </div>    
                     </summary>
@@ -41,7 +52,18 @@
 
     .deleted-item {
         background-color: #e9eff5;
+        font-size: 18px;
+        color: #333;
     }
+
+    .deleted-item > * {
+        align-self: center;
+    }
+
+    .deleted-item .fullname {
+        color: #000;
+    }
+
     details {
         padding: 0;
         border-bottom: 1px solid #f6f7f8;
