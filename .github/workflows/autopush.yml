@@ -1,0 +1,42 @@
+name: auto-push
+
+on: 
+  push:
+    branches:
+     - master
+  schedule:
+    - cron: '0 2,4,6,8,10,12,14,16,18,20,22 * * *'
+    - cron: '0 15 * * *'
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v3
+      
+      - name: Setup node version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+  
+      - name: Set timezone
+        uses: szenius/set-timezone@v1.0
+        with:
+          timezoneLinux: "Asia/Taipei"
+
+      - uses: pnpm/action-setup@v2.2.2
+        with:
+          version: 7
+
+      - name: run deploy
+        env:
+          API_DOMAIN: ${{ secrets.API_DOMAIN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        run: "pnpm install && pnpm run deploy"
+
+      - name: send tips
+        if: github.event.schedule == '0 15 * * *'
+        env:
+          NOTIFY_URI: ${{ secrets.NOTIFY_URI}}
+        run: "pnpm run notify"
