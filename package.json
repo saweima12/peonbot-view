@@ -32,8 +32,11 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@zerodevx/svelte-json-view": "^1.0.3",
 		"autoprefixer": "^10.4.14",
 		"dayjs": "^1.11.7",
+		"gridjs": "^6.0.6",
+		"gridjs-svelte": "^2.1.1",
 		"markedpage": "^0.1.14",
 		"postcss": "^8.4.22",
 		"svelte-fusioncharts": "^1.0.0",

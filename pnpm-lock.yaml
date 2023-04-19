@@ -6,11 +6,14 @@ specifiers:
   '@sveltejs/kit': ^1.5.0
   '@typescript-eslint/eslint-plugin': ^5.45.0
   '@typescript-eslint/parser': ^5.45.0
+  '@zerodevx/svelte-json-view': ^1.0.3
   autoprefixer: ^10.4.14
   dayjs: ^1.11.7
   eslint: ^8.28.0
   eslint-config-prettier: ^8.5.0
   eslint-plugin-svelte3: ^4.0.0
+  gridjs: ^6.0.6
+  gridjs-svelte: ^2.1.1
   markedpage: ^0.1.14
   postcss: ^8.4.22
   prettier: ^2.8.0
@@ -24,8 +27,11 @@ specifiers:
   vite: ^4.2.0
 
 dependencies:
+  '@zerodevx/svelte-json-view': 1.0.3_svelte@3.58.0
   autoprefixer: 10.4.14_postcss@8.4.22
   dayjs: 1.11.7
+  gridjs: 6.0.6
+  gridjs-svelte: 2.1.1_gridjs@6.0.6+svelte@3.58.0
   markedpage: 0.1.14
   postcss: 8.4.22
   svelte-fusioncharts: 1.0.0
@@ -566,6 +572,14 @@ packages:
       '@typescript-eslint/types': 5.59.0
       eslint-visitor-keys: 3.4.0
     dev: true
+
+  /@zerodevx/svelte-json-view/1.0.3_svelte@3.58.0:
+    resolution: {integrity: sha512-tYK3V0xxkUBAyldfLPTBnjo5/1MXOUiU70hcsFcGtG2kQ1tyhaVO1So6fkQ7C2bc9fGdJIZ7g11F3RTfJUSm9Q==}
+    peerDependencies:
+      svelte: 3.55.1
+    dependencies:
+      svelte: 3.58.0
+    dev: false
 
   /acorn-jsx/5.3.2_acorn@8.8.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -1156,6 +1170,22 @@ packages:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
     dev: true
 
+  /gridjs-svelte/2.1.1_gridjs@6.0.6+svelte@3.58.0:
+    resolution: {integrity: sha512-tYkgdqNKSnfmAYYc8EP4axn/Xlugp7VLwAlpNkP4SBLHHYD/ejD2DJ+FMatDNqcJ1Z1kuMnJWO+VBcAOirEByw==}
+    peerDependencies:
+      gridjs: '>=5.0.0'
+      svelte: '>=3.30.0'
+    dependencies:
+      gridjs: 6.0.6
+      svelte: 3.58.0
+    dev: false
+
+  /gridjs/6.0.6:
+    resolution: {integrity: sha512-TZ20nY+weE/wlyXOd3A9FJyJlsJ/MrHr6frMgUHFN29RmWZCYtnyfF0zuspXC81oePwSJeSZ8HY651aeyX8+rQ==}
+    dependencies:
+      preact: 10.13.2
+    dev: false
+
   /has-flag/4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
@@ -1574,6 +1604,10 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
 
+  /preact/10.13.2:
+    resolution: {integrity: sha512-q44QFLhOhty2Bd0Y46fnYW0gD/cbVM9dUVtNTDKPcdXSMA7jfY+Jpd6rk3GB0lcQss0z5s/6CmVP0Z/hV+g6pw==}
+    dev: false
+
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
@@ -1880,7 +1914,6 @@ packages:
   /svelte/3.58.0:
     resolution: {integrity: sha512-brIBNNB76mXFmU/Kerm4wFnkskBbluBDCjx/8TcpYRb298Yh2dztS2kQ6bhtjMcvUhd5ynClfwpz5h2gnzdQ1A==}
     engines: {node: '>= 8'}
-    dev: true
 
   /tailwindcss/3.3.1_postcss@8.4.22:
     resolution: {integrity: sha512-Vkiouc41d4CEq0ujXl6oiGFQ7bA3WEhUZdTgXAhtKxSy49OmKs8rEfQmupsfF0IGW8fv2iQkp1EVUuapCFrZ9g==}
